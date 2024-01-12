@@ -6,20 +6,24 @@ public class ProduitService {
     
     private List<Produit> produits = new ArrayList<>();
 
-    public void ajouterProduit(Produit produit) {
+    
+    
+    
+    
+          public void ajouterProduit(Produit produit) {
        
-        if (!produitExiste(produit.getId()) && !nomProduitExiste(produit.getNom())) {
+          if (!produitExiste(produit.getId()) && !nomProduitExiste(produit.getNom())) {
             
-            if (validerDonneesProduit(produit)) {
-                produits.add(produit);
-                System.out.println("Produit ajouté avec succès !");
-            } else {
-                System.out.println("Erreur : Les données du produit ne sont pas valides !");
-            }
-        } else {
-            System.out.println("Erreur : Un produit avec le même ID ou nom existe déjà !");
-        }
-    }
+              if (validerDonneesProduit(produit)) {
+                  produits.add(produit);
+                   System.out.println("Produit ajouté avec succès !");
+              } else {
+                    System.out.println("Erreur : Les données du produit ne sont pas valides !");
+               }
+           } else {
+                  System.out.println("Erreur : Un produit avec le même ID ou nom existe déjà !");
+              }
+         }
 
    
     public Produit obtenirProduitParId(Long id) {
@@ -33,22 +37,22 @@ public class ProduitService {
     }
 
     
-    public void mettreAJourProduit(Produit nouveauProduit) {
-        for (int i = 0; i < produits.size(); i++) {
-            Produit produit = produits.get(i);
-            if (produit.getId().equals(nouveauProduit.getId())) {
+         public void mettreAJourProduit(Produit nouveauProduit) {
+               for (int i = 0; i < produits.size(); i++) {
+                    Produit produit = produits.get(i);
+                      if (produit.getId().equals(nouveauProduit.getId())) {
                 
-                if (validerDonneesProduit(nouveauProduit)) {
-                    produits.set(i, nouveauProduit);
-                    System.out.println("Produit mis à jour avec succès !");
-                } else {
-                    System.out.println("Erreur : Les données du produit ne sont pas valides !");
-                }
-                return;
-            }
-        }
-        System.out.println("Erreur : Aucun produit trouvé avec cet ID pour la mise à jour.");
-    }
+                        if (validerDonneesProduit(nouveauProduit)) {
+                            produits.set(i, nouveauProduit);
+                          System.out.println("Produit mis à jour avec succès !");
+                          } else {
+                            System.out.println("Erreur : Les données du produit ne sont pas valides !");
+                           }
+                       return;
+                      }
+                     }
+                   System.out.println("Erreur : Aucun produit trouvé avec cet ID pour la mise à jour.");
+                   }
 
    
     public void supprimerProduit(Long id) {

@@ -48,8 +48,11 @@ class ProduitServiceTest {
 
     @Test
     void testSupprimerProduit() throws ProduitNotFoundException, ProduitException {
+    	
         ProduitService produitService = new ProduitService();
+        
         Produit produit1 = new Produit(1L, "Produit1", 10.0, 5);
+        
         produitService.ajouterProduit(produit1);
 
         produitService.supprimerProduit(1L);
