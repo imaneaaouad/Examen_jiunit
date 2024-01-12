@@ -6,17 +6,17 @@ import org.junit.Test;
 
 class ProduitServiceTest {
 
-    @Test
-    void testAjouterProduit() throws ProduitException, ProduitNotFoundException {
-        ProduitService produitService = new ProduitService();
+       @Test
+          void testAjouterProduit() throws ProduitException, ProduitNotFoundException {
+           ProduitService produitService = new ProduitService();
 
-        Produit produit1 = new Produit(1L, "Produit1", 10.0, 5);
-        produitService.ajouterProduit(produit1);
+            Produit produit1 = new Produit(1L, "Produit1", 10.0, 5);
+             produitService.ajouterProduit(produit1);
 
-        assertEquals(produit1, produitService.trouverProduitParId(1L));
+             assertEquals(produit1, produitService.trouverProduitParId(1L));
 
-        assertThrows(ProduitException.class, () -> produitService.ajouterProduit(new Produit(1L, "Produit2", 15.0, 3)));
-    }
+             assertThrows(ProduitException.class, () -> produitService.ajouterProduit(new Produit(1L, "Produit2", 15.0, 3)));
+            }
 
     @Test
     void testTrouverProduitParId() throws ProduitNotFoundException, ProduitException {
@@ -48,8 +48,11 @@ class ProduitServiceTest {
 
     @Test
     void testSupprimerProduit() throws ProduitNotFoundException, ProduitException {
+    	
         ProduitService produitService = new ProduitService();
+        
         Produit produit1 = new Produit(1L, "Produit1", 10.0, 5);
+        
         produitService.ajouterProduit(produit1);
 
         produitService.supprimerProduit(1L);
