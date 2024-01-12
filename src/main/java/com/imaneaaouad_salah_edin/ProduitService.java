@@ -6,20 +6,24 @@ public class ProduitService {
     
     private List<Produit> produits = new ArrayList<>();
 
-    public void ajouterProduit(Produit produit) {
+    
+    
+    
+    
+          public void ajouterProduit(Produit produit) {
        
-        if (!produitExiste(produit.getId()) && !nomProduitExiste(produit.getNom())) {
+          if (!produitExiste(produit.getId()) && !nomProduitExiste(produit.getNom())) {
             
-            if (validerDonneesProduit(produit)) {
-                produits.add(produit);
-                System.out.println("Produit ajouté avec succès !");
-            } else {
-                System.out.println("Erreur : Les données du produit ne sont pas valides !");
-            }
-        } else {
-            System.out.println("Erreur : Un produit avec le même ID ou nom existe déjà !");
-        }
-    }
+              if (validerDonneesProduit(produit)) {
+                  produits.add(produit);
+                   System.out.println("Produit ajouté avec succès !");
+              } else {
+                    System.out.println("Erreur : Les données du produit ne sont pas valides !");
+               }
+           } else {
+                  System.out.println("Erreur : Un produit avec le même ID ou nom existe déjà !");
+              }
+         }
 
    
     public Produit obtenirProduitParId(Long id) {
