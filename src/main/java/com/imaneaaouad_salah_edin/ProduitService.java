@@ -37,22 +37,22 @@ public class ProduitService {
     }
 
     
-    public void mettreAJourProduit(Produit nouveauProduit) {
-        for (int i = 0; i < produits.size(); i++) {
-            Produit produit = produits.get(i);
-            if (produit.getId().equals(nouveauProduit.getId())) {
+         public void mettreAJourProduit(Produit nouveauProduit) {
+               for (int i = 0; i < produits.size(); i++) {
+                    Produit produit = produits.get(i);
+                      if (produit.getId().equals(nouveauProduit.getId())) {
                 
-                if (validerDonneesProduit(nouveauProduit)) {
-                    produits.set(i, nouveauProduit);
-                    System.out.println("Produit mis à jour avec succès !");
-                } else {
-                    System.out.println("Erreur : Les données du produit ne sont pas valides !");
-                }
-                return;
-            }
-        }
-        System.out.println("Erreur : Aucun produit trouvé avec cet ID pour la mise à jour.");
-    }
+                        if (validerDonneesProduit(nouveauProduit)) {
+                            produits.set(i, nouveauProduit);
+                          System.out.println("Produit mis à jour avec succès !");
+                          } else {
+                            System.out.println("Erreur : Les données du produit ne sont pas valides !");
+                           }
+                       return;
+                      }
+                     }
+                   System.out.println("Erreur : Aucun produit trouvé avec cet ID pour la mise à jour.");
+                   }
 
    
     public void supprimerProduit(Long id) {
